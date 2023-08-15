@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "products")
 public class Products {
+	private static int count = 1;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -54,13 +55,19 @@ public class Products {
 		this.price = price;
 	}
 
-	public Products(Long id, String imgUrl, String name, String description, double price) {
+	public Products(int id, String imgUrl, String name, String description, double price) {
 		super();
-		this.id = id;
+		id = count;
 		this.imgUrl = imgUrl;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		Products.count +=1;
+	}
+	
+	public String toString() {
+		return "Id" +getId()+
+		"\nNome: " + this.getName();
 	}
 
 	@Override
