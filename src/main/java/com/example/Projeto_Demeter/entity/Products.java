@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 @Entity
-@Table(name = "products")
+@Table(name = "tb_products")
 public class Products {
 	private static int count = 1;
 	@Id
