@@ -22,7 +22,7 @@ public class ProductsList {
 	}
 
 	public ProductsList(Long id, String name) {
-		super();
+		
 		this.id = id;
 		this.name = name;
 	}
