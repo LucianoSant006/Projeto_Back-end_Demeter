@@ -12,7 +12,7 @@ package com.example.Projeto_Demeter.entity;
 	@Entity
 	@Table(name = "tb_Pedidos")
 	public class Pedido {
-		@Id
+		 @Id
 		 @GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
 		private Data date;
@@ -23,6 +23,42 @@ package com.example.Projeto_Demeter.entity;
 		public Pedido() {
 			
 	}
+
+
+
+		public Long getId() {
+			return id;
+		}
+
+
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+
+
+		public Data getDate() {
+			return date;
+		}
+
+
+
+		public void setDate(Data date) {
+			this.date = date;
+		}
+
+
+
+		public String getSituacao() {
+			return situacao;
+		}
+
+
+
+		public void setSituacao(String situacao) {
+			this.situacao = situacao;
+		}
 		
 		
 		

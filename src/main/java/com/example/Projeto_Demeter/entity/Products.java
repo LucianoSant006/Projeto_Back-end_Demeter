@@ -1,5 +1,6 @@
 package com.example.Projeto_Demeter.entity;
 
+
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -47,12 +48,21 @@ public class Products {
 		this.description = description;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
+	}
+	
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 	public Products(int id, String imgUrl, String name, String description, double price) {
@@ -65,10 +75,7 @@ public class Products {
 		Products.count +=1;
 	}
 	
-	public String toString() {
-		return "Id" +getId()+
-		"\nNome: " + this.getName();
-	}
+	
 
 	@Override
 	public int hashCode() {
