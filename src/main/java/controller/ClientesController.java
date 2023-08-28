@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import entity.Clientes;
+import recursos.Perfil;
 import repository.ClientesRepository;
 import service.ClientesService;
 
@@ -29,17 +31,25 @@ import service.ClientesService;
 @CrossOrigin("*")
 @RequestMapping("/clientes")
 public class ClientesController {
-
-	
-	
-	
 	
 	ClientesService clientesService;
 	
 	public ClientesController(ClientesService clientesService) {
 		this.clientesService = clientesService;
 		
+		
 	}
+	
+	 @GetMapping("cadastro")
+	    public ModelAndView cadastro(Clientes cliente){
+	        ModelAndView mv = new ModelAndView("cliente/cadastro");
+	        mv.addObject("usuario", new Clientes());
+	        Perfil[] perfilCliente = {Perfil.CLIENTE};
+	        mv.addObject("perfils", perfilCliente);
+	        return mv;
+	    }
+	
+	
 	
 	
 	@GetMapping("/clientes")
