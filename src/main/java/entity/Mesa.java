@@ -1,14 +1,17 @@
-package com.example.Projeto_Demeter.entity;
+package entity;
 
-import com.example.Projeto_Demeter.recursos.MesaSituacao;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import recursos.MesaSituacao;
 
+@Entity
+@Table(name = "Mesa")
 public class Mesa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,3 +44,4 @@ public class Mesa {
 	
 
 }
+

@@ -1,4 +1,4 @@
-package com.example.Projeto_Demeter;
+package com.demeter.Projeto_demeter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

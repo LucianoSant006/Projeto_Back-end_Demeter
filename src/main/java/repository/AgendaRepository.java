@@ -1,8 +1,8 @@
-package com.example.Projeto_Demeter.Repository;
+package repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.Projeto_Demeter.entity.Agenda;
+import entity.Agenda;
 
 public interface AgendaRepository extends JpaRepository <Agenda , Long> {
 

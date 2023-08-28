@@ -1,9 +1,7 @@
-package com.example.Projeto_Demeter.entity;
+package entity;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,19 +13,19 @@ public class ItemPedido {
 
 	private Integer position;
 	
-		public void setProducts(Products products) {
-		id.setProducts(products);
+		public void setProduto(Produto produto) {
+		id.setProduto(produto);
 	}
 
-	public Products getPrpducts() {
-		return id.getProducts();
+	public Produto getProduto() {
+		return id.getProduto();
 	}
 
-	public void setList(ProductsList list) {
+	public void setList(ProdutoList list) {
 		id.setList(list);
 	}
 
-	public ProductsList getList() {
+	public ProdutoList getList() {
 		return id.getList();
 	}
 

@@ -1,4 +1,4 @@
-package com.example.Projeto_Demeter;
+package com.demeter.Projeto_demeter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

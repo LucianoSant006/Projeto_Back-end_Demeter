@@ -1,15 +1,14 @@
-package com.example.Projeto_Demeter.entity;
+package entity;
 
+import javax.xml.crypto.Data;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-	import javax.xml.crypto.Data;
-
-	import jakarta.persistence.Entity;
-	import jakarta.persistence.GeneratedValue;
-	import jakarta.persistence.GenerationType;
-	import jakarta.persistence.Id;
-	import jakarta.persistence.Table;
-	@Entity
+    @Entity
 	@Table(name = "tb_Pedidos")
 	public class Pedido {
 		 @Id
@@ -65,3 +64,5 @@ package com.example.Projeto_Demeter.entity;
 		
 
 }
+
+

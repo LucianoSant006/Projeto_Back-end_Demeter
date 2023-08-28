@@ -1,7 +1,6 @@
-package com.example.Projeto_Demeter.recursos;
+package recursos;
 
 public enum MesaSituacao {
 	disponivel,
 	indisponivel,
-
 }
