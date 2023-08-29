@@ -27,6 +27,16 @@ public class Clientes {
 		@Column(name = "dataRegistro", length = 8,nullable = true)
 		private LocalDate dataRegistro;
 		
+		private String imagem;
+		
+		
+		
+		public String getImagem() {
+			return imagem;
+		}
+		public void setImagem(String imagem) {
+			this.imagem = imagem;
+		}
 		public Long getId() {
 			return id;
 		}

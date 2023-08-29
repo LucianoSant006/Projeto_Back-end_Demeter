@@ -11,18 +11,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Clientes;
 import recursos.Perfil;
 import repository.ClientesRepository;
 import service.ClientesService;
+import util.UploadUtil;
 
 
 
@@ -34,6 +38,9 @@ public class ClientesController {
 	
 	ClientesService clientesService;
 	
+	@Autowired
+	private ClientesRepository clientesRepository;
+	
 	public ClientesController(ClientesService clientesService) {
 		this.clientesService = clientesService;
 		
@@ -41,11 +48,16 @@ public class ClientesController {
 	}
 	
 	 @GetMapping("cadastro")
-	    public ModelAndView cadastro(Clientes cliente){
+	    public ModelAndView cadastro(Clientes clientes){
 	        ModelAndView mv = new ModelAndView("cliente/cadastro");
 	        mv.addObject("usuario", new Clientes());
-	        Perfil[] perfilCliente = {Perfil.CLIENTE};
-	        mv.addObject("perfils", perfilCliente);
+	        Perfil[] perfilClientes = {Perfil.CLIENTE};
+	        mv.addObject("perfils", perfilClientes);
+	        return mv;
+	    }
+	 @GetMapping("/inicio")
+	    public ModelAndView home(){
+	        ModelAndView mv =  new ModelAndView("home/index");
 	        return mv;
 	    }
 	
