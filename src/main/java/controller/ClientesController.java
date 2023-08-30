@@ -55,12 +55,19 @@ public class ClientesController {
 	        mv.addObject("perfils", perfilClientes);
 	        return mv;
 	    }
+	 
 	 @GetMapping("/inicio")
 	    public ModelAndView home(){
 	        ModelAndView mv =  new ModelAndView("home/index");
 	        return mv;
 	    }
-	
+	 
+	    @GetMapping("list-clientes")
+	    public ModelAndView clientesList(){
+	        ModelAndView mv = new ModelAndView("cliente/list-cliente");
+	        mv.addObject("clientes", clientesRepository.findAll());
+	        return mv;
+	    }
 	
 	
 	
