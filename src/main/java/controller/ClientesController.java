@@ -68,6 +68,13 @@ public class ClientesController {
 	        mv.addObject("clientes", clientesRepository.findAll());
 	        return mv;
 	    }
+	    
+	    @GetMapping("/excluir/{id}")
+	    public String excluirCliente(@PathVariable("id") Long id) {
+	    clientesRepository.deleteById(id);
+	    return "/home";
+	    	
+	    }
 	
 	
 	
