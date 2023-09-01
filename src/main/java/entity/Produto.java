@@ -1,5 +1,6 @@
 package entity;
 
+import java.sql.Date;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -7,6 +8,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
     @Entity
 	@Table(name = "tb_products")
@@ -19,7 +22,12 @@ import jakarta.persistence.Table;
 		private String name;
 		private String description;
 		private double price;
+		@Temporal(TemporalType.TIMESTAMP)
+		private Date dataCriacao;
 		 
+		@Temporal(TemporalType.TIMESTAMP)
+		private Date dataAtualizacao;
+
 		private Produto() {
 			
 		}
@@ -65,6 +73,28 @@ import jakarta.persistence.Table;
 			this.imgUrl = imgUrl;
 		}
 
+		
+
+		public void setPrice(double price) {
+			this.price = price;
+		}
+
+		public Date getDataCriacao() {
+			return dataCriacao;
+		}
+
+		public void setDataCriacao(Date dataCriacao) {
+			this.dataCriacao = dataCriacao;
+		}
+
+		public Date getDataAtualizacao() {
+			return dataAtualizacao;
+		}
+
+		public void setDataAtualizacao(Date dataAtualizacao) {
+			this.dataAtualizacao = dataAtualizacao;
+		}
+
 		public Produto
 		(int id, String imgUrl, String name, String description, double price) {
 			super();
@@ -94,6 +124,12 @@ import jakarta.persistence.Table;
 			Produto other = (Produto) obj;
 			return Objects.equals(id, other.id);
 		}
+
+		public void setDataAtualizacao(java.util.Date date) {
+		}
+
+        public void setDataCriacao(java.util.Date date) {
+        }
 		
 		
 		

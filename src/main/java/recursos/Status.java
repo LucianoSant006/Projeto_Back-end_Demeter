@@ -1,25 +1,27 @@
 package recursos;
 
 public enum Status {
+
     ABERTO("Aberto"),
     ANDAMENTO("Em Andamento"),
     FECHADO("Fechado");
 
     
-    private String status;
+    private String chamadoTicket;
 
 
-    private Status(String status) {
-        this.status = status;
+    private Status(String chamadoTicket) {
+        this.chamadoTicket = chamadoTicket;
     }
 
     public String getChamadoTicket() {
-        return status;
+        return chamadoTicket;
     }
 
     public void setChamadoTicket(String chamadoTicket) {
-        this.status = status;
+        this.chamadoTicket = chamadoTicket;
     }
+
     
     
 }
